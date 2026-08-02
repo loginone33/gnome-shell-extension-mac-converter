@@ -1,0 +1,13 @@
+{
+  "uuid": "mac-converter@loginone",
+  "name": "MAC Address Converter",
+  "description": "Quickly convert MAC address formats (colons, hyphens, dots, clean hex) directly from GNOME panel. This extension accesses the clipboard.",
+  "shell-version": [
+    "45", "46", "47", "48", "49", "50"
+  ],
+  "url": "https://github.com/loginone33/gnome-shell-extension-mac-converter",
+  "donations": {
+    "kofi": "loginone",
+    "buymeacoffee": "loginone"
+  }
+}
