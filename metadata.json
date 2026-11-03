@@ -3,7 +3,7 @@
   "name": "MAC Address Converter",
   "description": "Quickly convert and copy MAC address formats (colons, hyphens, dots, clean hex) to clipboard directly from the GNOME panel. This extension accesses the clipboard.",
   "shell-version": [
-    "45", "46", "47", "48", "49", "50"
+    "45", "46", "47", "48", "49", "50", "51"
   ],
   "url": "https://github.com/loginone33/gnome-shell-extension-mac-converter",
   "donations": {

@@ -30,7 +30,6 @@ class MACConverterButton extends PanelMenu.Button {
         const menuSection = new PopupMenu.PopupMenuSection();
 
         const headerBox = new St.BoxLayout({
-            vertical: false,
             style: 'margin-bottom: 8px;',
         });
         const headerLabel = new St.Label({
@@ -41,7 +40,6 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(headerBox);
 
         const entryBox = new St.BoxLayout({
-            vertical: false,
             style: 'margin-bottom: 8px;',
         });
 
@@ -81,7 +79,6 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(entryBox);
 
         const buttonGrid1 = new St.BoxLayout({
-            vertical: false,
             style: 'margin-bottom: 6px; spacing: 4px;',
         });
 
@@ -104,7 +101,6 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(buttonGrid1);
 
         const buttonGrid2 = new St.BoxLayout({
-            vertical: false,
             style: 'margin-bottom: 10px; spacing: 4px;',
         });
 
@@ -137,7 +133,6 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(buttonGrid2);
 
         const resultBox = new St.BoxLayout({
-            vertical: false,
             style: 'margin-top: 4px; align-items: center;',
         });
 
