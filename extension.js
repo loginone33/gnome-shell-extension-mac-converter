@@ -3,6 +3,7 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
 import St from 'gi://St';
+import Clutter from 'gi://Clutter';
 import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
 import GLib from 'gi://GLib';
@@ -79,7 +80,8 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(entryBox);
 
         const buttonGrid1 = new St.BoxLayout({
-            style: 'margin-bottom: 6px; spacing: 4px;',
+            spacing: 4,
+            style: 'margin-bottom: 6px;',
         });
 
         const btnColons = new St.Button({
@@ -101,7 +103,8 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(buttonGrid1);
 
         const buttonGrid2 = new St.BoxLayout({
-            style: 'margin-bottom: 10px; spacing: 4px;',
+            spacing: 4,
+            style: 'margin-bottom: 10px;',
         });
 
         const btnDots = new St.Button({
@@ -133,7 +136,8 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(buttonGrid2);
 
         const resultBox = new St.BoxLayout({
-            style: 'margin-top: 4px; align-items: center;',
+            y_align: Clutter.ActorAlign.CENTER,
+            style: 'margin-top: 4px;',
         });
 
         this._resultLabel = new St.Label({
