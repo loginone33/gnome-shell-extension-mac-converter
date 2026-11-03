@@ -14,6 +14,9 @@ class MACConverterButton extends PanelMenu.Button {
         super._init(0.0, 'MAC Address Converter');
 
         this._timeoutId = 0;
+        this._activateSignalId = 0;
+        this._textChangedSignalId = 0;
+        this._copySignalId = 0;
 
         const iconFile = Gio.File.new_for_path(`${path}/mac-converter-symbolic.svg`);
         const gicon = new Gio.FileIcon({ file: iconFile });
@@ -51,11 +54,11 @@ class MACConverterButton extends PanelMenu.Button {
             style: 'width: 250px; font-family: monospace;',
         });
 
-        this._entry.clutter_text.connect('activate', () => {
+        this._activateSignalId = this._entry.clutter_text.connect('activate', () => {
             this._convert(':');
         });
 
-        this._entry.clutter_text.connect('text-changed', () => {
+        this._textChangedSignalId = this._entry.clutter_text.connect('text-changed', () => {
             this._updateResult('');
         });
 
@@ -151,7 +154,7 @@ class MACConverterButton extends PanelMenu.Button {
             style_class: 'button suggested-action',
             style: 'margin-left: 6px; padding: 6px 12px;',
         });
-        this._copyBtn.connect('clicked', () => this._copyResult());
+        this._copySignalId = this._copyBtn.connect('clicked', () => this._copyResult());
 
         resultBox.add_child(this._resultLabel);
         resultBox.add_child(this._copyBtn);
@@ -232,6 +235,22 @@ class MACConverterButton extends PanelMenu.Button {
             GLib.source_remove(this._timeoutId);
             this._timeoutId = 0;
         }
+
+        if (this._activateSignalId) {
+            this._entry.clutter_text.disconnect(this._activateSignalId);
+            this._activateSignalId = 0;
+        }
+
+        if (this._textChangedSignalId) {
+            this._entry.clutter_text.disconnect(this._textChangedSignalId);
+            this._textChangedSignalId = 0;
+        }
+
+        if (this._copySignalId) {
+            this._copyBtn.disconnect(this._copySignalId);
+            this._copySignalId = 0;
+        }
+
         super.destroy();
     }
 });
