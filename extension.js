@@ -80,13 +80,13 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(entryBox);
 
         const buttonGrid1 = new St.BoxLayout({
-            spacing: 4,
             style: 'margin-bottom: 6px;',
         });
 
         const btnColons = new St.Button({
             label: 'Colons ( : )',
             style_class: 'button',
+            style: 'margin-right: 4px;',
             x_expand: true,
         });
         btnColons.connect('clicked', () => this._convert(':'));
@@ -103,13 +103,13 @@ class MACConverterButton extends PanelMenu.Button {
         menuSection.actor.add_child(buttonGrid1);
 
         const buttonGrid2 = new St.BoxLayout({
-            spacing: 4,
             style: 'margin-bottom: 10px;',
         });
 
         const btnDots = new St.Button({
             label: 'Dots ( . )',
             style_class: 'button',
+            style: 'margin-right: 4px;',
             x_expand: true,
         });
         btnDots.connect('clicked', () => this._convert('.'));
@@ -117,6 +117,7 @@ class MACConverterButton extends PanelMenu.Button {
         const btnClean = new St.Button({
             label: 'Clean Hex',
             style_class: 'button',
+            style: 'margin-right: 4px;',
             x_expand: true,
         });
         btnClean.connect('clicked', () => this._convert(''));
